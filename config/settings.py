@@ -123,6 +123,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/'),
 ]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 from django.utils.translation import gettext_lazy as _
 
