@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-&_^xmeyl)*8q8ez@x!6(uae0srv@#d%j2%43%m^0u#yoo0t#c8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []  # '185.204.0.151'
+ALLOWED_HOSTS = ['185.204.0.151']  # '185.204.0.151'
 
 # Application definition
 
@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # my app
-    'web',
     'celery',
+    'django_celery_beat',
+
+    'web',
 ]
 
 MIDDLEWARE = [
@@ -140,7 +142,7 @@ LOCALE_PATHS = [
 
 ]
 # my setting
-CURRENCY_API_TOKEN = 'xc9TTNtkKFgqrWJy1uiZl630LyQnt80cpopjVBJE1'
+CURRENCY_API_TOKEN = 'xc9TTNtkKFgqrWJy1uiZl630LyQnt80cpopjVBJE'
 
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
