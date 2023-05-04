@@ -1,456 +1,222 @@
-<!DOCTYPE html>
-{% load i18n %}
+{% extends "base.html" %}
 {% load static %}
-<html lang="en">
+{% load i18n %}
 
-<head>
-    <title>Zay Shop eCommerce HTML CSS Template</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block content %}
 
-    <link rel="apple-touch-icon" href="{% static 'assets/img/apple-icon.png' %}">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}">
+    <!-- carousel -->
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div id="carousel_img" class="carousel-item active">
+                <div class="fill">
+                    <img src="{% static 'assets/img/carousel_1.jpg' %}" class="d-block w-100" alt="...">
+                </div>
 
-    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/templatemo.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+                <div class="carousel-caption">
+                    <h2 class="animated fadeInLeft">{% trans "Salom" %} </h2>
+                    {#                    <p class="animated fadeInUp">Lorem ipsum dolor sit amet,</p>#}
+                    <button class="btn btn-outline-success" type="submit">Button</button>
+                </div>
 
-    <!-- Load fonts style after rendering the layout styles -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}">
-    <!--
-
-    TemplateMo 559 Zay Shop
-
-    https://templatemo.com/tm-559-zay-shop
-
-    -->
-</head>
-
-<body>
-<!-- Start Top Nav -->
-<nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
-    <div class="container text-light">
-        <div class="w-100 d-flex justify-content-between">
-            <div>
-                <i class="fa fa-envelope mx-2"></i>
-                <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
-                <i class="fa fa-phone mx-2"></i>
-                <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
             </div>
-            <div>
-                <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i
-                        class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
-                <a class="text-light" href="https://www.instagram.com/" target="_blank"><i
-                        class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
-                <a class="text-light" href="https://twitter.com/" target="_blank"><i
-                        class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
-                <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i
-                        class="fab fa-linkedin fa-sm fa-fw"></i></a>
+            <div id="carousel_img2" class="carousel-item">
+                <div class="fill">
+                    <img src="{% static "assets/img/carousel_2.jpg" %}" class="d-block w-100" alt="...">
+                </div>
+
+                <div class="carousel-caption">
+                    <h2 class="animated fadeInLeft">{% trans "Salom" %}</h2>
+                    {#                    <p class="animated fadeInUp">Lorem ipsum dolor sit amet,</p>#}
+                    <button class="btn btn-outline-success" type="submit">Button</button>
+                </div>
+            </div>
+            <div id="carousel_img" class="carousel-item">
+                <div class="fill">
+                    <img src="{% static "assets/img/carousel_3.jpg" %}" class="d-block w-100" alt="...">
+                </div>
+
+                <div class="carousel-caption">
+                    <h2 class="animated fadeInLeft">{% trans "Salom" %}</h2>
+                    {#                    <p class="animated fadeInUp">Lorem ipsum dolor sit amet,</p>#}
+                    <button class="btn btn-outline-success" type="submit">Button</button>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
-<!-- Close Top Nav -->
 
 
-<!-- Header -->
-<nav class="navbar navbar-expand-lg navbar-light shadow">
-    <div class="container d-flex justify-content-between align-items-center">
-
-        <a style="color: gold !important;" class="navbar-brand text-success logo h1 align-self-center"
-           href="index.html">
-            KXorezmTex
-        </a>
-
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-                data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
         </button>
-
-        <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
-             id="templatemo_main_nav">
-            <div class="flex-fill">
-                <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about_company_page_url' %}"><b>{% trans "About Company" %}</b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'our_factory_page_url' %}"><b>{% trans "Our Factory" %}</b></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'our_products_page_url' %}"><b>{% trans "Our products" %}</b></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact_page_url' %}"><b>{% trans "Contact" %}</b></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar align-self-center d-flex">
-
-                <div class="dropdown-center">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-
-                    <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                        {{ LANGUAGE_CODE|language_name }}
-                    </button>
-                    <ul class="dropdown-menu">
-
-                        {% for lang in languages %}
-                        <li><a class="dropdown-item" href="/{{ lang.code }}/">{{ lang.name_local }}</a></li>
-                        {% endfor %}
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-</nav>
-<!-- Close Header -->
-
-<!-- Modal -->
-<div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="w-100 pt-1 mb-5 text-right">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form action="" method="get" class="modal-content modal-body border-0 p-0">
-            <div class="input-group mb-2">
-                <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
-                <button type="submit" class="input-group-text bg-success text-light">
-                    <i class="fa fa-fw fa-search text-white"></i>
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
+    <!-- end carousel -->
 
 
-<!-- Start Banner Hero -->
-<div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
-        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
-        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="container">
-                <div class="row p-5">
-                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        <img style="height: 95%" class="img-fluid" src="{% static 'assets/img/banner_img_01.png' %}"
-                             alt="">
-                    </div>
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <div class="text-align-left align-self-center">
-                            <h1 class="h1 text-success" style="color: gold !important;"><b>KXorezmTex</b></h1>
-                            <h3 class="h2">Tiny and Perfect eCommerce Template</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolorem eligendi expedita illum incidunt ipsa libero, natus, non, odio odit perferendis porro provident quae recusandae soluta sunt ullam ut. A amet blanditiis dolore dolorem doloremque ex, labore laudantium magni modi nesciunt placeat quae, repellat sequi soluta velit voluptas voluptatibus! Ad blanditiis consequatur, consequuntur debitis distinctio dolor, earum eius enim error eveniet facilis illum incidunt laudantium magni nesciunt nihil porro possimus quidem quisquam, sapiente sed velit voluptate. Aliquid consequuntur cum dicta doloremque ea ex explicabo facilis, ipsam magni quisquam. Commodi deserunt itaque molestiae nostrum odit porro reprehenderit vitae voluptate voluptatibus.
-                                 <a rel="sponsored" class="text-success" href="https://unsplash.com/" target="_blank">Unsplash</a>
-                                and
-                                <a rel="sponsored" class="text-success" href="https://icons8.com/" target="_blank">Icons
-                                    8</a>.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="container">
-                <div class="row p-5">
-                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        <img style="height: 95%" class="img-fluid" src="{% static 'assets/img/banner_img_02.png' %}"
-                             alt="">
-                    </div>
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <div class="text-align-left">
-                            <h1 style="color: gold" class="h1"><b>Proident occaecat</b></h1>
-                            <h3 class="h2">Aliquip ex ea commodo consequat</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, cumque earum modi nihil nobis qui quo quos repellat! Autem dignissimos ducimus ea eius esse iure minus nobis, odio, perferendis quod recusandae repellendus sequi. Aliquid aspernatur deleniti distinctio dolores eaque, earum eius enim ex, ipsa labore nobis, quasi sapiente tenetur ut voluptate. Amet aspernatur blanditiis delectus deleniti expedita, impedit nesciunt officia perferendis, placeat possimus quaerat repudiandae sapiente sed sit ullam ut voluptatem. Dicta est quibusdam veniam.
-                                You are <strong>not permitted</strong> to re-distribute the template ZIP file in any
-                                kind of template collection websites.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="container">
-                <div class="row p-5">
-                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        <img style="height: 95%" class="img-fluid" src="{% static 'assets/img/banner_img_03.jpg' %}"
-                             alt="">
-                    </div>
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <div class="text-align-left">
-                            <h1 style="color: gold !important;" class="h1"><b>Repr in voluptate</b></h1>
-                            <h3 class="h2">Ullamco laboris nisi ut </h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur dolor dolorem earum eligendi excepturi, harum in modi, nesciunt optio recusandae similique sit voluptas voluptates voluptatum! Commodi consectetur dicta laborum necessitatibus repellat veritatis voluptatibus? Corporis dolorem fugiat, harum inventore ipsa maxime nesciunt perspiciatis quaerat reprehenderit rerum sint, soluta veniam. Accusamus, assumenda commodi culpa dolorem dolores error expedita explicabo facere id ipsam, laboriosam mollitia natus nulla odio omnis praesentium quae ratione sed ut vel velit, vitae voluptatem voluptatibus. Ad dolor ea ex expedita, laborum rerum velit vitae. A ab accusamus aliquam deserunt error eum inventore ipsam laboriosam, quis quisquam sed voluptatibus!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel"
-       role="button" data-bs-slide="prev">
-        <i class="fas fa-chevron-left"></i>
-    </a>
-    <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel"
-       role="button" data-bs-slide="next">
-        <i class="fas fa-chevron-right"></i>
-    </a>
-</div>
-<!-- End Banner Hero -->
-
-
-<!-- Start Categories of The Month -->
-<section class="container py-5">
-    <div class="row text-center pt-3">
-        <div class="col-lg-6 m-auto">
-            <h1 class="h1"><b>Categories products</b></h1>
-            <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci eius error illum ipsa perferendis. Ad debitis excepturi mollitia nam odit quibusdam quo sint tempora! Maxime, repudiandae, veniam. Aperiam assumenda consequuntur cum cumque exercitationem facilis, fugiat iste itaque laborum, nostrum officia officiis quisquam vel voluptate voluptatibus.
-            </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-md-4 p-5 mt-3">
-            <a href="#"><img src="{% static 'assets/img/category_img_01.png' %}"
-                             class="rounded-circle img-fluid border"></a>
-            <h5 class="text-center mt-3 mb-3">Watches</h5>
-            <p class="text-center"><a class="btn btn-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error esse ipsa natus vero! Commodi deserunt, dicta doloribus eum expedita sint.</a></p>
-        </div>
-        <div class="col-12 col-md-4 p-5 mt-3">
-            <a href="#"><img src="{% static 'assets/img/category_img_02.png' %}"
-                             class="rounded-circle img-fluid border"></a>
-            <h2 class="h5 text-center mt-3 mb-3">Shoes</h2>
-            <p class="text-center"><a class="btn btn-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolorem eaque, facilis fugit illum iure iusto maxime omnis optio quae!</a></p>
-        </div>
-        <div class="col-12 col-md-4 p-5 mt-3">
-            <a href="#"><img src="{% static 'assets/img/category_img_03.png' %}"
-                             class="rounded-circle img-fluid border"></a>
-            <h2 class="h5 text-center mt-3 mb-3">Accessories</h2>
-            <p class="text-center"><a class="btn btn-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta dolore doloribus error fugit impedit ipsam laboriosam necessitatibus neque.</a></p>
-        </div>
-    </div>
-</section>
-<!-- End Categories of The Month -->
-
-
-<!-- Start Featured Product -->
-<section class="bg-light">
-    <div class="container py-5">
-        <div class="row text-center py-3">
+    <!-- end carousel -->
+    <!-- Start Categories of The Month -->
+    <!-- Start Categories of The Month -->
+    <section class="container py-5">
+        <div class="row text-center pt-3">
             <div class="col-lg-6 m-auto">
-                <h1 class="h1"><b>Featured Product</b></h1>
-                <p>
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. A delectus deleniti dolore dolorum est explicabo, inventore minus, necessitatibus obcaecati officia officiis possimus quaerat quos sequi, velit vero voluptatum? Architecto cum eum nam non suscipit! Aliquid aut ea, facere fuga inventore itaque mollitia porro quisquam ratione sequi velit vitae? Ad adipisci blanditiis consectetur consequatur, cumque distinctio ea excepturi facere iste maxime necessitatibus nulla perferendis porro provident quae, quam quod quos saepe sapiente soluta totam ullam, ut voluptatum. Illo magnam minus reprehenderit temporibus. Fugit minus molestias velit.
+                <h1 class="h1"><b>{% trans "FROM COTTON to APPAREL" %}</b></h1>
+                <p>{% trans "Our key objective is the production of highly quality goods and services, promptly fulfilling our customer’s orders and winning their trusts. To further improve the quality of our yarn we always keep the relationship with our business partners and constantly pursue the new technologies and developments" %}
+
+
                 </p>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100">
-                    <a href="shop-single.html">
-                        <img src="{% static 'assets/img/feature_prod_01.jpg' %}" class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <ul class="list-unstyled d-flex justify-content-between">
-                            <li>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-muted fa fa-star"></i>
-                                <i class="text-muted fa fa-star"></i>
-                            </li>
-                            <li class="text-muted text-right">$240.00</li>
-                        </ul>
-                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">Gym Weight</a>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia
-                            deserunt.
-                        </p>
-                        <p class="text-muted">Reviews (24)</p>
-                    </div>
-                </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="{% static 'assets/img/card_img/card_1.jpeg' %}"
+                                 class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">{% trans "AGRO CLUSTERS AND COTTON TEXTILE CLUSTERS" %}</h5>
+                <p class="text-center"><a class="btn btn-success">
+                    {% trans "Established in 2018 Agro Clusters - 4 000 hectaresCotton Textile Clusters- 16 000 hectares 33 000 tons of seed cotton harvested every year" %}
+                </a></p>
             </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100">
-                    <a href="shop-single.html">
-                        <img src="{% static 'assets/img/feature_prod_02.jpg' %}" class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <ul class="list-unstyled d-flex justify-content-between">
-                            <li>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-muted fa fa-star"></i>
-                                <i class="text-muted fa fa-star"></i>
-                            </li>
-                            <li class="text-muted text-right">$480.00</li>
-                        </ul>
-                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">Cloud Nike Shoes</a>
-                        <p class="card-text">
-                            Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo
-                            ullamcorper.
-                        </p>
-                        <p class="text-muted">Reviews (48)</p>
-                    </div>
-                </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="{% static 'assets/img/card_img/card_2.jpg' %}"
+                                 class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">{% trans "SPINNING" %}</h2>
+                <p class="text-center"><a class="btn btn-success">{% trans "Established in 2014 Open end, Carded, Combed and Compact yarns and twisted yarns are produced Production capacity- 9 000 tons/Year Twisting Section capacity 3 000 tons/Year" %} </a></p>
             </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100">
-                    <a href="shop-single.html">
-                        <img src="{% static 'assets/img/feature_prod_03.jpg' %}" class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <ul class="list-unstyled d-flex justify-content-between">
-                            <li>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                            </li>
-                            <li class="text-muted text-right">$360.00</li>
-                        </ul>
-                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">Summer Addides Shoes</a>
-                        <p class="card-text">
-                            Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque
-                            ipsum lobortis nec.
-                        </p>
-                        <p class="text-muted">Reviews (74)</p>
-                    </div>
-                </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="{% static 'assets/img/card_img/card_3.png' %}"
+                                 class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">{% trans "FABRIC" %}</h2>
+                <p class="text-center"><a class="btn btn-success">{% trans "Have rented tubular fabric dyeing factory with capacity of 1500 tons/Year Open width fabrics currently in outsource." %}</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="{% static 'assets/img/card_img/card_4.png' %}"
+                                 class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">{% trans "SEWING" %}</h2>
+                <p class="text-center"><a class="btn btn-success">{% trans "HFirst sewing factory established in 2020 in Syrdaryo region. 7 lines with 250 workers Second factory started in 2022 in Khorezm region, 8 lines- 350 workers." %}</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="{% static 'assets/img/card_img/card_5.jpg' %}"
+                                 class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">{% trans "APPAREL" %}</h2>
+                <p class="text-center"><a class="btn btn-success">{% trans "Our apparel production process is a well-organized series of steps that include pattern creation, marking, cutting, stitching, pressing, packing." %}</a>
+                </p>
             </div>
         </div>
-    </div>
-</section>
-<!-- End Featured Product -->
+    </section>
+    <!-- End Categories of The Month -->
+
+    <section class="services" id="services">
+
+        <h1 style="text-align: center"><b>{% trans "Our Solutions" %}</b></h1>
 
 
-<!-- Start Footer -->
-<footer class="bg-dark" id="tempaltemo_footer">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-4 pt-5">
-                <h2 class="h2 text-success border-bottom pb-3 border-light logo" style="color: gold !important;">KXorezmTex</h2>
-                <ul class="list-unstyled text-light footer-link-list">
-                    <li>
-                        <i class="fas fa-map-marker-alt fa-fw"></i>
-                        123 Consectetur at ligula 10660
-                    </li>
-                    <li>
-                        <i class="fa fa-phone fa-fw"></i>
-                        <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
-                    </li>
-                    <li>
-                        <i class="fa fa-envelope fa-fw"></i>
-                        <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-md-4 pt-5">
-                <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
-                <ul class="list-unstyled text-light footer-link-list">
-                    <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                    <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
-                    <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
-                    <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
-                    <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
-                    <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
-                    <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-4 pt-5">
-                <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
-                <ul class="list-unstyled text-light footer-link-list">
-                    <li><a class="text-decoration-none" href="#">Home</a></li>
-                    <li><a class="text-decoration-none" href="#">About Us</a></li>
-                    <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
-                    <li><a class="text-decoration-none" href="#">FAQs</a></li>
-                    <li><a class="text-decoration-none" href="#">Contact</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="row text-light mb-4">
-            <div class="col-12 mb-3">
-                <div class="w-100 my-3 border-top border-light"></div>
-            </div>
-            <div class="col-auto me-auto">
-                <ul class="list-inline text-left footer-icons">
-                    <li class="list-inline-item border border-light rounded-circle text-center">
-                        <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i
-                                class="fab fa-facebook-f fa-lg fa-fw"></i></a>
-                    </li>
-                    <li class="list-inline-item border border-light rounded-circle text-center">
-                        <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i
-                                class="fab fa-instagram fa-lg fa-fw"></i></a>
-                    </li>
-                    <li class="list-inline-item border border-light rounded-circle text-center">
-                        <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i
-                                class="fab fa-twitter fa-lg fa-fw"></i></a>
-                    </li>
-                    <li class="list-inline-item border border-light rounded-circle text-center">
-                        <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i
-                                class="fab fa-linkedin fa-lg fa-fw"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-auto">
-                <label class="sr-only" for="subscribeEmail">Email address</label>
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control bg-dark border-light" id="subscribeEmail"
-                           placeholder="Email address">
-                    <div class="input-group-text btn-success text-light">Subscribe</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="w-100 bg-black py-3">
         <div class="container">
-            <div class="row pt-2">
-                <div class="col-12">
-                    <p class="text-left text-light">
-                        Copyright &copy; 2021 Company Name
-                        | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
-                    </p>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="service-item">
+                        <i class="fas fa-archive"></i>
+                        <h4>Cotton Yarn</h4>
+                        <p>{% trans "We can offer high-quality cotton yarns: Open End, Carded, Combed and Compact Combed" %}</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="service-item">
+                        <i class="fas fa-charging-station"></i>
+                        <h4>{% trans "Raw and Dyed Fabric" %}</h4>
+                        <p>{% trans "Using our own yarns we can also offer wide range of raw and dyed fabrics under the control of our experienced team" %}</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-item">
+                        <i class="fas fa-suitcase"></i>
+                        <h4>{% trans "Screen Printing" %}</h4>
+
+                        <p>{% trans "By using up to date automatic screen printing equipments (MHM and Sulfet) and skilled staff we can offer different types of printings that will satisfy your needs." %}</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-item">
+                        <i class="fas fa-archway"></i>
+                        <h4>{% trans "vApparel Poduction" %}</h4>
+                        <p>{% trans "The products are manu factured by qualified experienced personnel based on the latest modern high technologies, in particular, automated equipment of japan(JUKI) and Italy(OROX, BATTISTELLA)." %} </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Start Featured Product -->
+    <section class="bg-light">
+        <div class="container py-5">
+            <div class="row text-center py-3">
+
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="shop-single.html">
+                            <img src="{% static 'assets/img/feature_prod_01.jpg' %}" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+
+                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">{% trans "CUTTING" %}</a>
+                            <p class="text-muted">{% trans "30 000 Pcs./Day" %}</p>
+                            <p class="card-text">
+                                {% trans "Italian automatic cutting equipment OROX iCut that we are using gives cutting solutions that are on top of technology and performances through the most advanced tools applied" %}
+
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="H">
+                            <img src="{% static 'assets/img/feature_prod_02.jpg' %}" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <a href="#" class="h2 text-decoration-none text-dark">SCREEN PRINTING</a>
+                            <p class="text-muted">{% trans "30 000 Pcs./Day" %}</p>
+                            <p class="card-text">{% trans "Qualified and experienced personnel are using below up to date automatic screen printing machines to fulfill our and costumers needs :1 Oval - 36 tables and 14 colors 1 Spider – 16 tables and 14 colors 2 Spiders - 8 tables and 4 colors" %}
+
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="shop-single.html">
+                            <img src="{% static 'assets/img/feature_prod_03.jpg' %}" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <a href="#" class="h2 text-decoration-none text-dark">{% trans "Sewing Production" %}</a>
+                            <p class="text-muted">{% trans "30 000 Pcs./Day" %}</p>
+                            <p class="card-text">
+                                {% trans " Our qualified team and production facilities allow us to fulfill any complex orders on time. In both 2 production plants with overall 15 lines with 600 personnel we use brand new up to date equipments from Japan ( JUKI) and Italy ( OROX, Battistella)." %}
+
+                            </p>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- End Featured Product -->
 
-</footer>
-<!-- End Footer -->
+{% endblock %}
 
-<!-- Start Script -->
-<script src="{% static 'assets/js/jquery-1.11.0.min.js' %}"></script>
-<script src="{% static 'assets/js/jquery-migrate-1.2.1.min.js' %}"></script>
-<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
-<script src="{% static 'assets/js/templatemo.js' %}"></script>
-<script src="{% static 'assets/js/custom.js' %}"></script>
-<!-- End Script -->
-</body>
 
-</html>
+
+
+
+
+
+

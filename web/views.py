@@ -1,4 +1,6 @@
 from django.shortcuts import render
+import currencyapicom
+import requests
 
 
 # Create your views here.
@@ -17,3 +19,11 @@ def our_products_page(request):
 
 def contact_page(request):
     return render(request, "web/contact.html")
+
+
+def currencyapi():
+    client = currencyapicom.Client('xc9TTNtkKFgqrWJy1uiZl630LyQnt80cpopjVBJE')
+    data = client.latest()
+
+    print(client.latest())
+

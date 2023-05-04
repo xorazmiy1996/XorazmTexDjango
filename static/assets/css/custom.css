@@ -2,9 +2,72 @@
 Custom Css
 */
 
-.language{
+.language {
     padding: 10px;
     background: #ffffff;
     border: 1px black dotted;
 }
 
+#kxorazmtext {
+    font-size: 30px !important;
+}
+
+#template-mo-zay-hero-carousel {
+    background: url("static/assets/img/brand_01.png") !important;
+}
+
+#carousel_img {
+    width: 100% !important;
+    height: 100% !important;
+    background-position: center !important;
+    background-size: cover !important;
+}
+
+.fill {
+    width: 100% !important;
+    height: 90% !important;
+    background-position: center !important;
+    background-size: cover !important;
+
+}
+
+.carousel-caption {
+    padding-bottom: 17% !important;
+}
+
+.carousel-caption h2 {
+    font-size: 30px !important;
+}
+
+.carousel-caption p {
+    font-size: 20px !important;
+
+}
+
+.carousel-inner .carousel-item .fill > img {
+    animation: zoom 15s;
+    width: 100%;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(1, 1);
+    }
+    to {
+        transform: scale(1.5, 1.5);
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .carousel-caption {padding-bottom: 5px !important;}
+
+
+}
+
+/*incloud css*/
+#include_card{
+    margin: 15px !important;
+
+
+}

@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+from celery.schedules import crontab
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,7 +26,7 @@ SECRET_KEY = 'django-insecure-&_^xmeyl)*8q8ez@x!6(uae0srv@#d%j2%43%m^0u#yoo0t#c8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['185.204.0.151']
+ALLOWED_HOSTS = []  # '185.204.0.151'
 
 # Application definition
 
@@ -36,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # my app
-    'web'
+    'web',
+    'celery',
 ]
 
 MIDDLEWARE = [
@@ -133,6 +136,18 @@ LANGUAGES = (
     ('uz', _('Uzbek')),
 )
 LOCALE_PATHS = [
-    os.path.join(BASE_DIR/'locale/'),
+    os.path.join(BASE_DIR / 'locale/'),
 
 ]
+# my setting
+CURRENCY_API_TOKEN = 'xc9TTNtkKFgqrWJy1uiZl630LyQnt80cpopjVBJE1'
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+
+CELERYBEAT_SCHEDULE = {
+    'update_currency_dashboard': {
+        'task': 'update_currency_dashboard',  # the same goes in the task name
+        'schedule': crontab(minute=2),
+    },
+}
