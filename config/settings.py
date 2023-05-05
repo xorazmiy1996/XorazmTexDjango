@@ -151,6 +151,6 @@ CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 CELERYBEAT_SCHEDULE = {
     'update_currency_dashboard': {
         'task': 'update_currency_dashboard',  # the same goes in the task name
-        'schedule': crontab(minute=2),
+        'schedule': crontab(hour=8),
     },
 }
