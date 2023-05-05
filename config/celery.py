@@ -13,6 +13,6 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'update_currency_dashboard': {
         'task': 'update_currency_dashboard',
-        'schedule': timedelta(seconds=30)
+        'schedule': timedelta(seconds=10000)
     }
 }
