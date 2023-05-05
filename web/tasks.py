@@ -10,8 +10,10 @@ from web.models import Currency
 def update_currency_dashboard():
     currencies = get_currencies()
     for code, value in currencies['data'].items():
-        Currency.objects.create(
-            code=code,
-            value=Decimal(value['value'])
+        currency, created = Currency.objects.get_or_create(
+            defaults={'value': Decimal(value['value']), 'code': code},
+            code=code
         )
-
+        if not created:
+            currency.value = Decimal(value['value'])
+            currency.save(update_fields=['value'])
