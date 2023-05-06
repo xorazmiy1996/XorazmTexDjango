@@ -1,119 +1,123 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 {% block content %}
-    <!-- Modal -->
-    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="w-100 pt-1 mb-5 text-right">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="" method="get" class="modal-content modal-body border-0 p-0">
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
-                    <button type="submit" class="input-group-text bg-success text-light">
-                        <i class="fa fa-fw fa-search text-white"></i>
-                    </button>
-                </div>
-            </form>
+
+    <main-2>
+        <div class="heading-2">
+            <h1>Our Factory</h1>
+            <p>The company “ELEGANT FIBER TEXTILE” LLC, founded in 2017, is one of the leading manufacturers of high
+                quality, competitive and modern products in the country.
+
+                The products are manufactured by qualified and experienced personnel based on the latest modern high
+                technologies, in particular, automated equipment of Japan and Italy. Our production facilities allow us
+                to fulfill any complex orders on time.</p>
         </div>
+
+        <section style="margin-top: 5px !important;" class="container py-5">
+            <div class="row">
+
+                <div class="col-md-6 col-lg-3 pb-5">
+                    <div class="wrapper-3">
+                        <div class="circular-bar-3">
+                            <div class="percent-3">
+                                0%
+                            </div>
+                        </div>
+                        <label class="label3">Innovation management</label>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 pb-5">
+                    <div class="wrapper-4">
+                        <div class="circular-bar-4">
+                            <div class="percent-4">
+                                0%
+                            </div>
+                        </div>
+                        <label class="label3">Marketing</label>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 pb-5">
+                    <div class="wrapper-5">
+                        <div class="circular-bar-5">
+                            <div class="percent-5">
+                                0%
+                            </div>
+                        </div>
+                        <label class="label3">Strategy</label>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 pb-5">
+                    <div class="wrapper-6">
+                        <div class="circular-bar-6">
+                            <div class="percent-6">
+                                0%
+                            </div>
+                        </div>
+                        <label class="label3">Planning</label>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+    </main-2>
+
+
+
+    <!-- Close Banner -->
+    <div class="container-2">
+        <section2 class="about-2">
+            <div class="about-image-2">
+                <img src="{% static "assets/img/world.jpg" %}" alt="">
+            </div>
+            <div class="about-content-2">
+                <h2>Partnerships.</h2>
+                <p>For us, one of the most important key point is to develop value-aligned partnerships that focus on
+                    common goals and complementary strengths. Currently we are exporting our products to Russia,
+                    Kazakhstan, Kyrgyzstan and to Luxemburg. Nowadays with partners from Germany, Canada and USA the
+                    negotiations are underway. </p>
+
+
+            </div>
+
+        </section2>
     </div>
 
 
-    <section class="bg-success py-5">
-        <div class="container">
-            <div class="row align-items-center py-5">
-                <div class="col-md-8 text-white">
-                    <h1>Our Factory</h1>
-                    <p>
-                        ABOUT COMPANY
-                        ELEGANT FIBER TEXTILE LLC, founded in 2017, is one of the leading manufacturers of high-quality,
-                        competitive and modern products in the country
-
-                        Products are manufactured by qualified and experienced personnel on the basis of the latest
-                        modern high technologies, in particular, automated equipment from Japan and Italy. Our
-                        production facilities allow us to fulfill any complex orders in due time.
-                    </p>
-                    <br>
-                    <div class="card" style="padding: 10px">
-
-                        <div class="card-body">
-                            <h5>Innovation management</h5>
-                            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                 aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: 85%">85%</div>
-                            </div>
-                            <br>
-                            <h5>Marketing</h5>
-                            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                 aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: 90%">90%</div>
-                            </div>
-                            <br>
-                            <h5>Strategy</h5>
-                            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                 aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: 95%">95%</div>
-                            </div>
-                            <br>
-                            <h5>Planning</h5>
-                            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                 aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: 100%">100%</div>
-                            </div>
-                            <br>
-                        </div>
-                    </div>
-
-                </div>
-                {#                    <div class="col-md-4">#}
-                {#                        <img src="assets/img/about-hero.svg" alt="About Hero">#}
-                {#                    </div>#}
-            </div>
-        </div>
-    </section>
-    <!-- Close Banner -->
 
     <!-- Start Section -->
     <section class="container py-5">
         <div class="row text-center pt-5 pb-3">
             <div class="col-lg-6 m-auto">
-                <h1 class="h1"><b>Our Services</b></h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur consequuntur,
-                    doloremque
-                    eius enim explicabo harum in magni non, quis ratione, recusandae tenetur voluptatibus? Consequatur,
-                    laborum, quasi. Autem fugiat magnam nostrum odio quia repellendus sapiente suscipit. Aperiam,
-                    mollitia,
-                    neque? Aliquam aliquid consectetur consequatur cumque debitis dignissimos dolor dolores dolorum
-                    earum,
-                    enim error eveniet ipsum iusto maxime mollitia nulla, placeat porro possimus repudiandae, sequi
-                    similique velit voluptas. Aspernatur debitis, deleniti hic itaque magnam placeat rem soluta
-                    voluptatibus. Assumenda, dolor, perferendis?
-                </p>
+                <h1 class="h1"><b>Why choose us</b></h1>
             </div>
         </div>
         <div class="row">
 
             <div class="col-md-6 col-lg-3 pb-5">
                 <div class="h-100 py-5 services-icon-wap shadow">
-                    <div class="h1 text-success text-center"><i class="fa fa-truck fa-lg"></i></div>
-                    <h2 class="h5 mt-4 text-center">Delivery Services</h2>
+                    <div class="h1 text-success text-center"><i class="fa fa-check-circle"></i></div>
+                    <h2 class="h5 mt-4 text-center">QUALITY CONTROL</h2>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-3 pb-5">
                 <div class="h-100 py-5 services-icon-wap shadow">
-                    <div class="h1 text-success text-center"><i class="fas fa-exchange-alt"></i></div>
-                    <h2 class="h5 mt-4 text-center">Shipping & Return</h2>
+                    <div class="h1 text-success text-center"><i class="fa fa-money-bill"></i></div>
+                    <h2 class="h5 mt-4 text-center">COMPETITIVE PRICING</h2>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-3 pb-5">
                 <div class="h-100 py-5 services-icon-wap shadow">
-                    <div class="h1 text-success text-center"><i class="fa fa-percent"></i></div>
-                    <h2 class="h5 mt-4 text-center">Promotion</h2>
+                    <div class="h1 text-success text-center"><i class="fa fa-clock-four"></i></div>
+                    <h2 class="h5 mt-4 text-center">ON TIME DELIVERY</h2>
                 </div>
             </div>
 
@@ -125,7 +129,123 @@
             </div>
         </div>
     </section>
-    <!-- End Section -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/4.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/5.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/6.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/7.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/8.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/9.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/10.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/11.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/12.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/13.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/14.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/15.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/17.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/18.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="{% static 'assets/img/fabric_img/19.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <!-- Start Brands -->
     <section class="bg-light py-5">
@@ -133,17 +253,6 @@
             <div class="row text-center py-3">
                 <div class="col-lg-6 m-auto">
                     <h1 class="h1"><b>Our Brands</b></h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis distinctio dolore enim
-                        excepturi
-                        explicabo fuga laudantium libero nemo neque nobis numquam quos recusandae reiciendis repellat
-                        reprehenderit sint, tempora, voluptas, voluptatum! Earum facilis fugit impedit quo tempora?
-                        Blanditiis in, maxime neque nihil nobis quas ullam. A accusantium adipisci animi cupiditate,
-                        dicta
-                        ea, eligendi eos est facere illo labore magnam maxime nihil pariatur porro provident sapiente
-                        suscipit temporibus totam vitae? Aliquam ea illo impedit laboriosam molestiae nulla omnis
-                        praesentium reiciendis vero voluptas?
-                    </p>
                 </div>
                 <div class="col-lg-9 m-auto tempaltemo-carousel">
                     <div class="row d-flex flex-row">
@@ -264,108 +373,7 @@
     <!--End Brands-->
 
 
-    <!-- Start Footer -->
-    <footer class="bg-dark" id="tempaltemo_footer">
-        <div class="container">
-            <div class="row">
 
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light logo" style="color: gold !important;">
-                        KXorezmTex</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li>
-                            <i class="fas fa-map-marker-alt fa-fw"></i>
-                            123 Consectetur at ligula 10660
-                        </li>
-                        <li>
-                            <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
-                        <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
-                        <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Home</a></li>
-                        <li><a class="text-decoration-none" href="#">About Us</a></li>
-                        <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
-                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
-                        <li><a class="text-decoration-none" href="#">Contact</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="row text-light mb-4">
-                <div class="col-12 mb-3">
-                    <div class="w-100 my-3 border-top border-light"></div>
-                </div>
-                <div class="col-auto me-auto">
-                    <ul class="list-inline text-left footer-icons">
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a rel="nofollow" class="text-light text-decoration-none" target="_blank"
-                               href="http://fb.com/templatemo"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank"
-                               href="https://www.instagram.com/"><i
-                                    class="fab fa-instagram fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i
-                                    class="fab fa-twitter fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i
-                                    class="fab fa-linkedin fa-lg fa-fw"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-auto">
-                    <label class="sr-only" for="subscribeEmail">Email address</label>
-                    <div class="input-group mb-2">
-                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail"
-                               placeholder="Email address">
-                        <div class="input-group-text btn-success text-light">Subscribe</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-100 bg-black py-3">
-            <div class="container">
-                <div class="row pt-2">
-                    <div class="col-12">
-                        <p class="text-left text-light">
-                            Copyright &copy; 2021 Company Name
-                            | Designed by <a rel="sponsored" href="https://templatemo.com/page/1"
-                                             target="_blank">TemplateMo</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </footer>
-    <!-- End Footer -->
 
 
 {% endblock %}
