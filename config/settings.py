@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     # my app
     'celery',
     'django_celery_beat',
-
     'web',
+    'parler',  # NEW
 ]
 
 MIDDLEWARE = [
@@ -124,11 +124,12 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# My config
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static/'),
-# ]
-STATIC_ROOT =os.path.join(BASE_DIR, 'static/')
+################# My config#########################
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/'),
+]
+
+# STATIC_ROOT =os.path.join(BASE_DIR, 'static/')
 
 
 from django.utils.translation import gettext_lazy as _
@@ -138,6 +139,20 @@ LANGUAGES = (
     ('ru', _('Russian')),
     ('uz', _('Uzbek')),
 )
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en',}, # English
+        {'code': 'ru',}, # Russian
+        {'code': 'uz',}, # Uzbek
+    ),
+    'default': {
+        'fallbacks': ['en'],
+        'hide_untranslated': False,
+    }
+}
+
+
+
 LOCALE_PATHS = [
     os.path.join(BASE_DIR / 'locale/'),
 
@@ -154,3 +169,6 @@ CELERYBEAT_SCHEDULE = {
         'schedule': crontab(hour=8),
     },
 }
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

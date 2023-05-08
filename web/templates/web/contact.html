@@ -13,34 +13,8 @@
             <div class="w-100 pt-1 mb-5 text-right">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="" method="get" class="modal-content modal-body border-0 p-0">
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
-                    <button type="submit" class="input-group-text bg-success text-light">
-                        <i class="fa fa-fw fa-search text-white"></i>
-                    </button>
-                </div>
-            </form>
         </div>
     </div>
-
-
-    <!-- Start Content Page -->
-
-    {#  <div class="container-fluid bg-light py-5">#}
-    {#        <div class="col-md-6 m-auto text-center">#}
-    {#            <h1 class="h1"><b>Contact Us</b></h1>#}
-    {#            <p>#}
-    {#                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi aut beatae blanditiis cum dolorum#}
-    {#                enim#}
-    {#                esse eum fuga fugiat iusto molestias natus neque numquam odio possimus praesentium provident quae quam#}
-    {#                quibusdam quisquam, quo reiciendis similique sit soluta tempora ullam unde veniam voluptas voluptate.#}
-    {#                Animi#}
-    {#                delectus neque numquam. Consequatur delectus deleniti ipsum iste labore minus nesciunt nisi perferendis#}
-    {#                quaerat sed tempore, voluptatum.#}
-    {#            </p>#}
-    {#        </div>#}
-    {#    </div>#}
     <section1 class="contact_1">
         <div class="container_1">
             <div class="content_1">
@@ -61,9 +35,6 @@
                     </div>
                     <div class="Email_1 details_1">
                         <i class="fas fa-envelope"></i>
-                        <div class="topic_1">
-                            <Email></Email>
-                        </div>
                         <div class="text-one_1">muhammadibragimov439@gmail.com</div>
                         <div class="text-two_1">info.codinglab</div>
 
@@ -76,21 +47,33 @@
                         Consequuntur, deserunt dolores, libero nesciunt nobis repellendus sequi, soluta sunt tempora
                         totam veritatis!</p>
 
-                    <from action="#">
+                    <form method="post">
+                        {% csrf_token %}
                         <div class="input-box_1">
-                            <input type="text" placeholder="Enter your name">
+                            <input id="id_full_name" name="full_name" type="text" placeholder="Enter your name">
                         </div>
                         <div class="input-box_1">
-                            <input type="text" placeholder="Enter your email">
+                            <input id="id_email" name="email" type="text" placeholder="Enter your email">
                         </div>
                         <div class="input-box_1 massage-box_1">
-                            <textarea></textarea>
+                            <textarea id="id_text" name="text"></textarea>
                         </div>
                         <div class="button_1">
-                            <button class="btn btn-outline-primary">Send Now</button>
+                            <button type="submit" class="btn btn-outline-primary">Send Now</button>
                         </div>
-
-                    </from>
+                        {% if form.errors %}
+                            <div class="alert alert-danger">
+                                <strong>Error:</strong> Please correct the errors below.
+                                <ul>
+                                    {% for field in form %}
+                                        {% for error in field.errors %}
+                                            <li>{{ field.label }}: {{ error }}</li>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </form>
                 </div>
 
             </div>

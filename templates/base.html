@@ -34,9 +34,15 @@
     <link rel="stylesheet" href="{% static 'assets_slove/css/animate.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
 
+     <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'news/style.css' %}">
+
+
+
+
 
 </head>
-<body>
+<body style="overflow: v !important;">
 
 <!-- Start Top Nav -->
 <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
@@ -95,7 +101,7 @@
                            href="{% url 'our_products_page_url' %}"><b>{% trans "Our products" %}</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact_page_url' %}"><b>{% trans "Contact" %}</b></a>
+                        <a class="nav-link" href="{% url 'create_apply_url' %}"><b>{% trans "Contact" %}</b></a>
                     </li>
                 </ul>
             </div>
@@ -286,6 +292,10 @@
 <script src="{% static 'assets_slove/js/tabs.js' %}"></script>
 <script src="{% static 'assets_slove/js/swiper.js' %}"></script>
 <script src="{% static 'assets_slove/js/custom.js' %}"></script>
+
+
+<!-- news  -->
+ <script src="{% static 'news/index.js' %}"></script>
 
 
 
