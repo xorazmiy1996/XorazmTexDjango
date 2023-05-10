@@ -13,40 +13,70 @@ from prompt_toolkit.validation import ValidationError
 from .forms import ApplyForm
 from .models import Currency, Apply, News
 
-USD = Currency.objects.filter(code="USD")
-RUB = Currency.objects.filter(code="RUB")
-EUR = Currency.objects.filter(code="EUR")
-UZS = Currency.objects.filter(code="UZS")
-all_currency = Currency.objects.exclude(Q(code="USD") | Q(code="RUB") | Q(code="EUR") | Q(code="UZS"))
-currency = list(chain(USD, EUR, RUB, UZS, all_currency))
-UZS = Currency.objects.filter(code="UZS").first()
-context = {"currency": currency, "UZS": UZS}
+# USD = Currency.objects.filter(code="USD")
+# RUB = Currency.objects.filter(code="RUB")
+# EUR = Currency.objects.filter(code="EUR")
+# UZS = Currency.objects.filter(code="UZS")
+# all_currency = Currency.objects.exclude(Q(code="USD") | Q(code="RUB") | Q(code="EUR") | Q(code="UZS"))
+# currency = list(chain(USD, EUR, RUB, UZS))
+# print(currency)
+# UZS = Currency.objects.filter(code="UZS").first()
+# context = {"currency": currency, "UZS": UZS}
 
 
 # Create your views here.
 
 
 def about_company_page(request):
-
+    RUB = Currency.objects.filter(code="RUB")
+    EUR = Currency.objects.filter(code="EUR")
+    UZS = Currency.objects.filter(code="UZS")
+    currency = list(chain(EUR, RUB, UZS))
+    UZS = Currency.objects.filter(code="UZS").first()
+    context = {"currency": currency, "UZS": UZS}
     return render(request, "web/about_company.html", context)
 
 
 def our_factory_page(request):
+    RUB = Currency.objects.filter(code="RUB")
+    EUR = Currency.objects.filter(code="EUR")
+    UZS = Currency.objects.filter(code="UZS")
+    currency = list(chain(EUR, RUB, UZS))
+    UZS = Currency.objects.filter(code="UZS").first()
+    context = {"currency": currency, "UZS": UZS}
 
     return render(request, "web/our_factory.html", context)
 
 
 def our_products_page(request):
+    RUB = Currency.objects.filter(code="RUB")
+    EUR = Currency.objects.filter(code="EUR")
+    UZS = Currency.objects.filter(code="UZS")
+    currency = list(chain(EUR, RUB, UZS))
+    UZS = Currency.objects.filter(code="UZS").first()
+    context = {"currency": currency, "UZS": UZS}
     news = News.objects.all()
     context['news'] = news
     return render(request, "web/our_products.html", context)
 
 
 def contact_page(request):
+    RUB = Currency.objects.filter(code="RUB")
+    EUR = Currency.objects.filter(code="EUR")
+    UZS = Currency.objects.filter(code="UZS")
+    currency = list(chain(EUR, RUB, UZS))
+    UZS = Currency.objects.filter(code="UZS").first()
+    context = {"currency": currency, "UZS": UZS}
     return render(request, "web/contact.html", context)
 
 
 def currency_page(request):
+    RUB = Currency.objects.filter(code="RUB")
+    EUR = Currency.objects.filter(code="EUR")
+    UZS = Currency.objects.filter(code="UZS")
+    currency = list(chain(EUR, RUB, UZS))
+    UZS = Currency.objects.filter(code="UZS").first()
+    context = {"currency": currency, "UZS": UZS}
     return render(request, "web/currency.html", context)
 
 
