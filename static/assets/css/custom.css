@@ -5,7 +5,7 @@ Custom Css
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Pontano Sans', sans-serif !important;
 }
 
 .language {
@@ -16,6 +16,10 @@ body {
 
 #kxorazmtext {
     font-size: 30px !important;
+}
+
+p{
+     text-align: justify !important;
 }
 
 #template-mo-zay-hero-carousel {
@@ -716,3 +720,26 @@ main-2 {
 
 
 }
+
+.flag_menu {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    list-style-type: none;
+}
+
+.flag_menu li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flag_menu li {
+    padding: 5px;
+}
+
+
+.flag_menu li:hover {
+    background: #198754;
+}
+

@@ -34,15 +34,17 @@
     <link rel="stylesheet" href="{% static 'assets_slove/css/animate.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
 
-     <!-- Additional CSS Files -->
+    <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{% static 'news/style.css' %}">
 
-
-
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pontano+Sans:wght@700&display=swap" rel="stylesheet">
 
 
 </head>
-<body style="overflow: v !important;">
+<body style="overflow: scroll !important;">
 
 <!-- Start Top Nav -->
 <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
@@ -105,72 +107,29 @@
                     </li>
                 </ul>
             </div>
+            <div class="flag_container">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
 
-
-            <div class="navbar align-self-center d-flex">
-
-                <div class="dropdown-center">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-
-                    <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                        {{ LANGUAGE_CODE|language_name }}
-                    </button>
-                    <ul class="dropdown-menu">
-
-                        {% for lang in languages %}
-                            <li><a class="dropdown-item" href="/{{ lang.code }}/">{{ lang.name_local }}</a></li>
-                        {% endfor %}
-
-                    </ul>
-                </div>
-
-
-            </div>
-            <div class="navbar align-self-center d-flex">
-                <a  href="{% url "currency_page_url" %}" class="btn btn-outline-success">1USD =  {{ UZS.value|floatformat }} so'm</a>
-
-
-                <!-- Button trigger modal -->
-{#                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">#}
-{##}
-{#                            1$ =  {{ UZS.value|floatformat }} UZS#}
-{##}
-{#                </button>#}
-
-                <!-- Modal -->
-{#                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"#}
-{#                     aria-hidden="true">#}
-{#                    <div class="modal-dialog">#}
-{#                        <div class="modal-content">#}
-{#                            <div class="modal-header">#}
-{#                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>#}
-{#                                <button type="button" class="btn-close" data-bs-dismiss="modal"#}
-{#                                        aria-label="Close"></button>#}
-{#                            </div>#}
-{#                            <div class="modal-body">#}
-{#                                <ul class="list-group">#}
-{#                                    {% for x in currency %}#}
-{#                                        <li class="list-group-item {% if x.code == "UZS" or  x.code == "USD" or  x.code == "RUB" or  x.code == "EUR"  %}active{% endif %} "><b>1 USD</b> =  {{ x.value|floatformat}} {{ x.code  }}</li>#}
-{#                                    {% endfor %}#}
-{##}
-{#                                </ul>#}
-{##}
-{#                            </div>#}
-{#                            <div class="modal-footer">#}
-{#                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>#}
-{#                                <button type="button" class="btn btn-primary">Save changes</button>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
+                <ul class="flag_menu">
+                    <li><a href="/en/"><img width="16px" height="16px" src="{% static "assets/img/flag/us.svg" %}"
+                                            alt=""></a>
+                    </li>
+                    <li><a href="/ru/"><img width="16px" height="16px" src="{% static "assets/img/flag/ru.svg" %}"
+                                            alt=""></a>
+                    </li>
+                    <li><a href="/uz/"><img width="16px" height="16px" src="{% static "assets/img/flag/uz.svg" %}"
+                                            alt=""></a>
+                    </li>
+                </ul>
 
 
             </div>
 
         </div>
+
+    </div>
 </nav>
 <!-- Close Header -->
 
@@ -195,7 +154,7 @@
             <div class="col-md-4 pt-5">
                 <h2 class="h2 text-success border-bottom pb-3 border-light logo" style="color: gold !important;">
                     KXorezmTex</h2>
-                <ul class="list-unstyled text-light footer-link-list">
+                <ul style="text-align: left !important;" class="list-unstyled text-light footer-link-list">
                     <li>
                         <i class="fas fa-map-marker-alt fa-fw"></i>
                         123 Consectetur at ligula 10660
@@ -211,19 +170,19 @@
                 </ul>
             </div>
 
-            <div class="col-md-4 pt-5">
-                <h2 class="h2 text-light border-bottom pb-3 border-light">Exchange rates</h2>
-                {#                <button id="myBtn" type="button" class="btn btn-primary">Primary</button>#}
-                {#                <script>#}
-                {#                    document.getElementById("myBtn").onclick = displayDate;#}
-                {##}
-                {#                    function displayDate() {#}
-                {#                        console.log("salom")#}
-                {#                    }#}
-                {#                </script>#}
-
-
-            </div>
+            {#            <div class="col-md-4 pt-5">#}
+            {#                <h2 class="h2 text-light border-bottom pb-3 border-light">Exchange rates</h2>#}
+            {#                <button id="myBtn" type="button" class="btn btn-primary">Primary</button>#}
+            {#                <script>#}
+            {#                    document.getElementById("myBtn").onclick = displayDate;#}
+            {##}
+            {#                    function displayDate() {#}
+            {#                        console.log("salom")#}
+            {#                    }#}
+            {#                </script>#}
+            {##}
+            {##}
+            {#            </div>#}
 
 
         </div>
@@ -279,7 +238,7 @@
 <script src="{% static 'assets/js/jquery-migrate-1.2.1.min.js' %}"></script>
 <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'assets/js/templatemo.js' %}"></script>
-  <script src="{% static 'assets/js/custom.js' %}"></script>
+<script src="{% static 'assets/js/custom.js' %}"></script>
 <!-- End Script -->
 
 
@@ -295,10 +254,7 @@
 
 
 <!-- news  -->
- <script src="{% static 'news/index.js' %}"></script>
-
-
-
+<script src="{% static 'news/index.js' %}"></script>
 
 
 <!-- Bootstrap -->
